@@ -21,26 +21,30 @@
         </nav>
     </header>
     <main>
-        <div class="container-fluid">
+        <div class="container-fluid bg-light">
             <div class="row">
-                <div class="col-3">
-                    <form onsubmit="app.songsController.search(event)">
+                <div class="col-3 bg-info">
+                    <form class="py-3" onsubmit="app.songsController.search(event)">
                         <input type="text" class="form-control" name="query" placeholder="Search For Music" />
                         <button class="btn btn-success mt-1 form-control" type="submit">
                             Search
                         </button>
                     </form>
-                </div>
-            </div>
-            <div class="row">
-                <div id="songs" class="col-3">
+
+                    <table id="songs" class="table table-hover">
+
+                    </table>
 
                 </div>
-                <div class="col-6 text-center" id="active-song">
 
-
+                <div class="col-6 text-center bg-dark text-light" id="active-song">
 
                 </div>
+
+                <table id="my-songs" class="col-3 table table-hover" style="height:100vh;">
+
+                </table>
+
             </div>
         </div>
     </main>
@@ -59,6 +63,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </body>
 
 </html>
