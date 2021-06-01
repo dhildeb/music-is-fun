@@ -31,7 +31,6 @@ export class SongsController {
     let query = event.target.query.value
 
     songsService.getMusicByQuery(query)
-    console.log(ProxyState.songs)
   }
 
   selectSong(id) {
@@ -42,7 +41,7 @@ export class SongsController {
     sandboxService.addSong()
   }
 
-  deleteSong() {
+  deleteSong(id) {
     sandboxService.deleteSong(id)
   }
 }

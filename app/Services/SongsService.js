@@ -14,12 +14,12 @@ class SongsService {
     $.getJSON(url)
       .then(res => {
         ProxyState.songs = res.results.map(rawData => new Song(rawData));
-        console.log(res)
       })
       .catch(err => {
         throw new Error(err);
       });
   }
+
 
   /**
    * Retrieves the saved list of songs from the sandbox
@@ -43,7 +43,6 @@ class SongsService {
 
   selectSong(id) {
     ProxyState.activeSong = ProxyState.songs.filter(s => s.preview == id)
-    console.log(ProxyState.activeSong)
   }
 }
 

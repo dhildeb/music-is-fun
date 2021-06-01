@@ -1,28 +1,14 @@
 
-export class Song {
+export class MySong {
   constructor(data) {
-    this.artist = data.artistName
-    this.album = data.collectionName
-    this.title = data.trackName
-    this.preview = data.previewUrl
-    this.price = data.trackPrice
-    this.albumArt = data.artworkUrl100
+    this.id = data.id
+    this.artist = data.artist
+    this.album = data.album
+    this.title = data.title
+    this.preview = data.preview
+    this.price = data.price
+    this.albumArt = data.albumArt
     this.user = data.user || "daniel"
-  }
-
-  get songsTemplate() {
-    return `
-    <tr class="row justify-content-between" onclick="app.songsController.selectSong('${this.preview}')">
-    <th class="col-4">
-        <img src="${this.albumArt}" >
-    </th>
-    <th class="col-8">
-        <p class="d-flex flex-column">
-            <span>${this.title} - ${this.album}</span>
-        </p>
-    </th>
-</tr>
-    `
   }
 
   get activeTemplate() {
@@ -40,5 +26,17 @@ export class Song {
       </div>
     </div>
 `
+  }
+  get playlistTemplate() {
+    return `
+    <tr class="row justify-content-between" onclick="app.songsController.selectSong('${this.preview}')">
+    <th class="d-flex">
+        <b class="d-flex flex-column">
+            <span>${this.title} - ${this.album}</span>
+        </b>
+        <i class="text-danger" onclick="app.songsController.deleteSong('${this.id}')">X</i>
+        </th>
+</tr>
+    `
   }
 }
